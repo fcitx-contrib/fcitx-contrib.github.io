@@ -19,6 +19,10 @@ export default defineConfig({
         link: '/docs/',
       },
       {
+        text: '常见问题',
+        link: '/docs/faq'
+      },
+      {
         text: '输入法',
         items: [
           { text: '拼音/双拼', link: '/docs/im/pinyin' },

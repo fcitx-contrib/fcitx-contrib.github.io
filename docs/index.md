@@ -6,7 +6,7 @@
 
 不同平台上的小企鹅拥有相似的输入体验，并各有一些平台特色的功能。
 
-请在 [GitHub](https://github.com/fcitx-contrib/fcitx5-macos-installer/blob/master/README.zh-CN.md) 下载适用于 macOS 的安装包。
+请在 [GitHub](https://github.com/fcitx-contrib/fcitx5-macos-installer/blob/master/README.zh-CN.md) 下载适用于 macOS 的安装包，并在 `高级` -> `数据管理` 导入其他输入法的配置（可选）。
 
 * 对于大多数用户，拼音版（包含了双拼和五笔）是最佳选择。
 
