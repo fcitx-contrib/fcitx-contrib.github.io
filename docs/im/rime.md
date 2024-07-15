@@ -97,3 +97,4 @@ patch:
 * [雾凇拼音](https://github.com/iDvel/rime-ice)（Rime 简体拼音的事实标准）
 * [星猫键道](https://github.com/hugh7007/xmjd6-rere)
 * [飞鹤快拼](https://github.com/boomker/rime-fast-xhup)
+* [墨奇音形](https://github.com/gaboolic/rime-shuangpin-fuzhuma)
