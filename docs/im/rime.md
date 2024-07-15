@@ -95,6 +95,7 @@ patch:
 * [声笔系列码](https://github.com/sbsrf/sbsrf)（首个声明支持小企鹅 macOS 版的方案）
 * [魔然](https://github.com/ksqsf/rime-moran)（由小企鹅 macOS 版作者之一开发）
 * [雾凇拼音](https://github.com/iDvel/rime-ice)（Rime 简体拼音的事实标准）
+* [白霜拼音](https://github.com/gaboolic/rime-frost)（词频智能的全拼词库）
 * [星猫键道](https://github.com/hugh7007/xmjd6-rere)
 * [飞鹤快拼](https://github.com/boomker/rime-fast-xhup)
 * [墨奇音形](https://github.com/gaboolic/rime-shuangpin-fuzhuma)
