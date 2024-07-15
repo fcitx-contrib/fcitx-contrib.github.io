@@ -98,3 +98,4 @@ patch:
 * [星猫键道](https://github.com/hugh7007/xmjd6-rere)
 * [飞鹤快拼](https://github.com/boomker/rime-fast-xhup)
 * [墨奇音形](https://github.com/gaboolic/rime-shuangpin-fuzhuma)（双拼辅助码） [白霜拼音](https://github.com/gaboolic/rime-frost)（词频智能的全拼词库）
+* [oh-my-rime](https://github.com/Mintimate/oh-my-rime)（快速初始化 rime 的模板方案，支持拼音和五笔）
