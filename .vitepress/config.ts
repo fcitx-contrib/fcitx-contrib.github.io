@@ -29,6 +29,15 @@ export default defineConfig({
           { text: '码表', link: '/docs/im/table' },
           { text: '中州韵（Rime）', link: '/docs/im/rime' },
         ]
+      },
+      {
+        text: '主题编辑器',
+        link: '/docs/theme',
+        items: [
+          { text: '导入/导出', link: '/docs/theme/import' },
+          { text: '调整主题', link: '/docs/theme/adjust' },
+          { text: '定制 CSS', link: '/docs/theme/css' },
+        ]
       }
     ],
 

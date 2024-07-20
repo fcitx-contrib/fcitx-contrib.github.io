@@ -32,7 +32,7 @@ patch:
 示例：当您输入 `y` `u`时，
 * 不显示：`yu`位于候选窗内，占据一行；
 * 编辑中文本：`yu`位于应用程序中；
-* 提交预览：假设首选为`与`，则`与`也出现在客户程序中。
+* 提交预览：假设首选为`与`，则`与`也出现在应用程序中。
 
 ### 共享输入状态
 是否将当前程序的输入状态带到下一个程序。
@@ -46,6 +46,8 @@ patch:
 
 ### 取消激活输入法时提交当前文本
 当您通过 `Ctrl+Shift_L` 从 Rime 切换到英文键盘时，是否将当前的高亮候选词上屏。
+
+默认情况下，`Shift_L` 也会将 Rime 切换到英文键盘。如果这与您的习惯不符（例如您想将当前的输入码而非高亮词上屏，并切换到 Rime 内部的 ASCII 模式），请在 `全局配置` -> `快捷键` -> `临时在当前和第一个输入法之间切换` 中删除 `Shift_L`。
 
 ### 用户数据目录
 点击将使用 Finder 打开 Rime 用户目录。
@@ -70,13 +72,17 @@ patch:
 由于该插件工作在 librime 中，受限于单线程同步架构，在网络请求返回前候选窗不会更新。
 为了缓解卡顿，该插件默认需要 `Ctrl+T` 主动查询，且设置了0.5秒的超时时间。
 
-您可以使用小企鹅拼音的多线程异步云输入解决上述问题。
+您可以使用小企鹅拼音的多线程异步云拼音解决上述问题。
 :::
+
+## 东风破
+
+当您使用 [plum](https://github.com/rime/plum) 管理输入方案时，请指定 `rime_frontend=fcitx5-rime` 或 `rime_dir=~/.local/share/fcitx5/rime`。
 
 ## 命令行接口
 
 ::: warning
-若在lua脚本中执行命令，需要在末尾加上`&`放至后台执行，否则会导致主线程死锁。
+若在 lua 脚本中执行命令，需要在末尾加上 `&` 放至后台执行，否则会导致主线程死锁。
 :::
 
 ### 部署
@@ -98,4 +104,4 @@ patch:
 * [星猫键道](https://github.com/hugh7007/xmjd6-rere)
 * [飞鹤快拼](https://github.com/boomker/rime-fast-xhup)
 * [墨奇音形](https://github.com/gaboolic/rime-shuangpin-fuzhuma)（双拼辅助码） [白霜拼音](https://github.com/gaboolic/rime-frost)（词频智能的全拼词库）
-* [oh-my-rime](https://github.com/Mintimate/oh-my-rime)（快速初始化 rime 的模板方案，支持拼音和五笔）
+* [oh-my-rime](https://github.com/Mintimate/oh-my-rime)（快速初始化 Rime 的模板方案，支持拼音和五笔）
