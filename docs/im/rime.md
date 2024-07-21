@@ -79,6 +79,11 @@ patch:
 
 当您使用 [plum](https://github.com/rime/plum) 管理输入方案时，请指定 `rime_frontend=fcitx5-rime` 或 `rime_dir=~/.local/share/fcitx5/rime`。
 
+## 并击
+
+并击方案依赖按键释放事件，但是 macOS 并不会通知输入法这一事件。
+为此小企鹅实现了模拟按键释放，您需要在 `高级` -> `macOS Frontend` 中启用 `模拟按键释放`。
+
 ## 命令行接口
 
 ::: warning
