@@ -69,7 +69,7 @@
         <div class="fcitx-preedit fcitx-hidden"></div>
       </div>
       <div class="fcitx-aux-down fcitx-hidden"></div>
-      <div class="fcitx-hoverables fcitx-horizontal fcitx-horizontal-scroll">
+      <div class="fcitx-hoverables fcitx-horizontal fcitx-horizontal-scroll fcitx-mousemoved">
         <div class="fcitx-candidate fcitx-hoverable"></div>
         <div class="fcitx-divider"></div>
         <div class="fcitx-candidate fcitx-hoverable"></div>
@@ -101,6 +101,8 @@
 `fcitx-horizontal`* 表示候选词和翻页按钮水平排列，相应地 `fcitx-vertical` 表示垂直排列。它们和 `fcitx-horizontal-tb` 等书写模式可以产生 6 种组合，在 `主题编辑器` -> `版式` 中设置。
 
 * `fcitx-horizontal-scroll`* 表示当前处于卷轴模式，仅在 `fcitx-horizontal-tb` 和 `fcitx-horizontal` 的组合下可能出现。
+
+* `fcitx-mousemoved`* 表示本次界面更新后用户移动了鼠标。它的意义是：鼠标未移动时不应算作悬浮于候选词上，从而改变高亮。
 
 `fcitx-hoverable` 表示其内部的 `fcitx-hoverable-inner` 元素可以在鼠标悬浮时产生高亮效果，用于候选词和翻页按钮。
 
@@ -192,7 +194,7 @@
 
 ```html
 <div class="fcitx-paging fcitx-scroll fcitx-hoverable">
-  <div class="fcitx-expand fcitx-hoverable-inner">
+  <div class="fcitx-expand fcitx-paging-inner fcitx-hoverable-inner">
     <svg></svg>
   </div>
 </div>
