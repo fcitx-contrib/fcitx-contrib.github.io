@@ -200,3 +200,12 @@
 </div>
 ```
 `fcitx-scroll`* 表示内部的 svg 是可以展开卷轴的下箭头。注意当前处于普通模式，仅在展开后才会进入卷轴模式。
+
+## 图片
+CSS 引用图片（`background-img: url(...)`）有三种方式：
+* HTTP
+* base64
+* 本地相对路径
+
+使用本地相对路径时，需要注意 CSS 文件位于 `~/.local/share/fcitx5/www/css`，而只有 `www` 目录下的文件可以被引用。
+因此为引用 `~/.local/share/fcitx5/www/img/foo.png`，您应写 `../img/foo.png`。
