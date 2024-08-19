@@ -19,3 +19,19 @@
 * 其他平台的 Rime 用户请下载中州韵版，并手动导入方案到 `~/.local/share/fcitx5/rime`。
 
 * 小企鹅 Linux 版用户，请下载原装版，并使用插件管理器安装引擎。
+
+## 展示
+
+### 多彩皮肤
+
+![截图演示](../public/demo.png)
+
+<img src="../public/demo/background-layout-font.png" width="350">
+
+### 卷轴模式
+
+![卷轴模式](../public/demo/win11-light-scroll.png)
+
+### 异形窗口
+
+![异形窗口](../public/demo/decoration.png)
