@@ -28,10 +28,14 @@
 
 <img src="../public/demo/background-layout-font.png" width="350">
 
+（背景图：[Close Up Photography of White and Black Cat](https://www.pexels.com/photo/close-up-photography-of-white-and-black-cat-69932/), CC0 许可）
+
 ### 卷轴模式
 
 ![卷轴模式](../public/demo/win11-light-scroll.png)
 
-### 异形窗口
+### 深度定制
 
-![异形窗口](../public/demo/decoration.png)
+[定制 CSS](./theme/css.md) 可以深度个性化界面，异形窗口等也可实现：
+
+![异形候选窗](../public/demo/decoration.png)
