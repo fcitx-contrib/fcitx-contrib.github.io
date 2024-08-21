@@ -19,23 +19,3 @@
 * 其他平台的 Rime 用户请下载中州韵版，并手动导入方案到 `~/.local/share/fcitx5/rime`。
 
 * 小企鹅 Linux 版用户，请下载原装版，并使用插件管理器安装引擎。
-
-## 展示
-
-### 多彩皮肤
-
-![截图演示](../public/demo.png)
-
-<img src="../public/demo/background-layout-font.png" width="350">
-
-（背景图：[Close Up Photography of White and Black Cat](https://www.pexels.com/photo/close-up-photography-of-white-and-black-cat-69932/), CC0 许可）
-
-### 卷轴模式
-
-![卷轴模式](../public/demo/win11-light-scroll.png)
-
-### 深度定制
-
-[定制 CSS](./theme/css.md) 可以深度个性化界面，异形窗口等也可实现：
-
-![异形候选窗](../public/demo/decoration.png)
