@@ -11,6 +11,9 @@ hero:
       text: 安装
       link: https://github.com/fcitx-contrib/fcitx5-macos-installer/blob/master/README.zh-CN.md
     - theme: alt
+      text: 展示
+      link: /demo/
+    - theme: alt
       text: 文档
       link: /docs/
 
