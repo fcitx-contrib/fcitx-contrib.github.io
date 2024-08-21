@@ -14,6 +14,6 @@
 
 ## 深度定制
 
-[定制 CSS](./theme/css.md) 可以深度个性化界面，异形窗口等也可实现：
+[定制 CSS](../docs/theme/css.md) 可以深度个性化界面，异形窗口等也可实现：
 
 ![异形候选窗](/demo/decoration.png)
