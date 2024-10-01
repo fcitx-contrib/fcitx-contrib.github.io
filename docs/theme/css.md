@@ -62,29 +62,27 @@
 ## 面板结构
 ```html
 <div class="fcitx-panel fcitx-horizontal-tb">
-  <div class="fcitx-panel-blur-outer fcitx-blur">
-    <div class="fcitx-panel-blur-inner">
-      <div class="fcitx-header">
-        <div class="fcitx-aux-up fcitx-hidden">拼</div>
-        <div class="fcitx-preedit fcitx-hidden"></div>
-      </div>
-      <div class="fcitx-aux-down fcitx-hidden"></div>
-      <div class="fcitx-hoverables fcitx-horizontal fcitx-horizontal-scroll fcitx-mousemoved">
-        <div class="fcitx-candidate fcitx-hoverable"></div>
-        <div class="fcitx-divider"></div>
-        <div class="fcitx-candidate fcitx-hoverable"></div>
-        <div class="fcitx-divider fcitx-divider-paging"></div>
-        <div class="fcitx-paging"></div>
-      </div>
+  <div class="fcitx-panel-blur fcitx-blur">
+    <div class="fcitx-header">
+      <div class="fcitx-aux-up fcitx-hidden">拼</div>
+      <div class="fcitx-preedit fcitx-hidden"></div>
+    </div>
+    <div class="fcitx-aux-down fcitx-hidden"></div>
+    <div class="fcitx-hoverables fcitx-horizontal fcitx-horizontal-scroll fcitx-mousemoved">
+      <div class="fcitx-candidate fcitx-hoverable"></div>
+      <div class="fcitx-divider"></div>
+      <div class="fcitx-candidate fcitx-hoverable"></div>
+      <div class="fcitx-divider fcitx-divider-paging"></div>
+      <div class="fcitx-paging"></div>
     </div>
   </div>
 </div>
 ```
 `fcitx-horizontal-tb`* 表示候选窗的书写模式是按行从上到下，其他可能的值有 `fcitx-vertical-rl` 和 `fcitx-vertical-lr`。
 
-`fcitx-panel-blur-outer` 和 `fcitx-panel-blur-inner` 的作用是为面板提供（可选的）毛玻璃效果。您不应该更改它们的属性，否则可能造成候选窗闪烁。
+`fcitx-panel-blur` 的作用是为面板提供（可选的）毛玻璃效果。仅适用于小企鹅在线版（小企鹅 macOS 版的背景模糊不由 CSS 控制）。
 
-`fcitx-blur`* 拥有 `backdrop-filter: blur(16px)`（半径可在 `主题编辑器` -> `背景` 调节）。该 class 每 40ms 在 `fcitx-panel-blur-outer` 和 `fcitx-panel-blur-inner` 交替出现，原因是当 DOM 结构保持不变时，背景模糊不会重新计算，导致拖动候选窗时毛玻璃失效。
+`fcitx-blur`* 拥有 `backdrop-filter: blur(16px)`（半径可在 `主题编辑器` -> `背景` 调节）。仅适用于小企鹅在线版。
 
 `fcitx-header` 是面板头部，它的子元素 `fcitx-aux-up` 和 `fcitx-preedit` 同一时刻至多一个处于显示状态。
 
