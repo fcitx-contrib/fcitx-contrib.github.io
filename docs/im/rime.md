@@ -106,6 +106,25 @@ patch:
 /Library/Input\ Methods/Fcitx5.app/Contents/bin/fcitx5-curl /config/addon/rime/sync -X POST -d '{}'
 ```
 
+## 常见问题
+### 为什么总是进入 A 模式出不来，`Shift_L` 会在 en 和 A 之间反复切换
+很可能是在 Rime 的中文状态下误触了 `Shift_R`，在 A 模式下再敲一次 `Shift_R` 即可恢复。
+`Shift_R` 的切换行为是 Rime 默认提供的（请查阅共享目录的 `default.yaml`）。
+若要禁用，请在用户目录的 `default.custom.yaml` 中打 patch，例如
+
+```yaml
+patch:
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: inline_ascii
+      # Shift_R: commit_text
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: clear
+      Eisu_toggle: clear
+```
+
 ## 友情链接
 感谢以下方案对小企鹅 macOS 版的认可。
 我们将继续加强与 Rime 社区的合作，为定制用户提供更好的输入体验。
