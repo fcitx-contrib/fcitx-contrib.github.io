@@ -10,7 +10,8 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'macOS', link: '/docs' },
       { text: 'Linux', link: 'https://fcitx-im.org/wiki/Fcitx_5' },
-      { text: 'Android', link: 'https://fcitx5-android.github.io' }
+      { text: 'Android', link: 'https://fcitx5-android.github.io' },
+      { text: 'Online', link: '/online/index.html', target: '_blank' }
     ],
 
     sidebar: [
