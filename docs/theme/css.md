@@ -162,7 +162,7 @@
 </div>
 ```
 * 在水平排列下，候选词间的分隔线隐藏，候选词和翻页按钮之间的垂直分隔线显示。
-* 在垂直排列下，候选词间的分隔线若宽度为 0，则相邻的 `fcitx-candidate-inner` 相距 1 个外边距；若宽度大于 0，则相距 2 个外边距 + 宽度。`fcitx-divider-side` 隐藏，且的长度等于外边距，使 `fcitx-divider-middle` 的长度等于 `fcitx-candidate-inner`。
+* 在垂直排列下，候选词间的分隔线若宽度为 0，则相邻的 `fcitx-candidate-inner` 相距 1 个外边距；若宽度大于 0，则相距 2 个外边距 + 宽度。`fcitx-divider-side` 隐藏，且长度等于外边距，使 `fcitx-divider-middle` 的长度等于 `fcitx-candidate-inner`。
 * 在卷轴模式下，没有翻页按钮，分隔线和面板同色，用来填充候选词间的空隙（因为卷轴的宽度是固定的，不像水平排列下宽度由候选词控制而没有空隙）。
 
 ## 翻页按钮结构

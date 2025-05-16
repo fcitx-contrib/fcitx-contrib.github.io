@@ -5,13 +5,39 @@
 * 快捷键切换，默认 `Ctrl+Shift_L`，可在 `全局配置` -> `快捷键` -> `切换启用/禁用输入法` 设置。
 
 ### 我想使用 CapsLock 切换中英文
-`打开键盘设置` -> `所有输入法`，开启 `使用大写锁定键切换 “ABC” 输入法`。
-
-由于 `CapsLock` 按键的特殊性，您无法在不切换大小写的情况下使用 `CapsLock` 在小企鹅内部切换中英文。
+可以，但先要使用 [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) 将 `CapsLock` 映射为其他组合键：
+* 在 `Complex Modifications` 中 `Add your own rule`，（以 `Ctrl+Shift_R` 为例）填入
+```json
+{
+    "description": "change CapsLock to Ctrl+Shift_R",
+    "manipulators": [{
+        "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+                "mandatory": [],
+                "optional": []
+            }
+        },
+        "to": [{
+            "key_code": "right_shift",
+            "modifiers": ["control"]
+        }],
+        "type": "basic"
+    }]
+}
+```
+然后根据您的需求，
+* 若要在小企鹅内部切换中英文，在 `全局配置` -> `快捷键` -> `切换启用/禁用输入法` 中录制 `CapsLock`（注意此时会显示上一步设置的快捷键，而非 `CapsLock`）；
+* 若要切换小企鹅和系统的 `ABC`，需要再借助 [Input Source Pro](https://github.com/runjuu/InputSourcePro)，在 `快捷键` 中将 `ABC` 和小企鹅加入同一个切换组，并录制 `CapsLock`。
 
 ## 如何在多个输入法间切换
 * 菜单切换；
 * 快捷键切换，默认按住 `Ctrl` 并连续按下 `Shift_L`。
+
+## 为什么小企鹅注册为英语输入法
+* 小企鹅尽可能实现完整的输入功能，包括适配用户删掉了系统 `ABC` 的特殊情况。
+* 只有英语输入法才可以在密码输入框中使用。如果注册为其他语言的输入法，系统将在密码输入框自动切换为 `ABC`，但输入完毕后不会自动切换回来，给用户造成麻烦。
+* 小企鹅作为输入法框架，支持多种语言的输入法（包括 Hallelujah 英语智能输入），但没有必要对所有支持的语言注册一次。
 
 ## 如何切换繁简
 
