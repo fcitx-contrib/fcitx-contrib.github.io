@@ -1,32 +1,48 @@
 # 常见问题
 
+## 将小企鹅添加到英语还是简体中文
+* 如果您不想在输入密码时被系统切换为 `ABC`，或您通过特殊方式删掉了系统的 `ABC`，则在英语添加。
+* 如果您想通过简单设置实现 `CapsLock` 切换 `ABC` 和小企鹅/其他中文输入法，或者您删掉了小企鹅的英语键盘，则在简体中文添加。
+
+请不要重复添加。
+
 ## 如何切换中英文
+
+### 如果您使用小企鹅的英语键盘
 * 菜单切换；
 * 快捷键切换，默认 `Ctrl+Shift_L`，可在 `全局配置` -> `快捷键` -> `切换启用/禁用输入法` 设置。
 
-### 我想使用 CapsLock 切换中英文
-可以，但先要使用 [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) 将 `CapsLock` 映射为其他组合键：
-* 在 `Complex Modifications` 中 `Add your own rule`，（以 `Ctrl+Shift_R` 为例）填入
+### 如果您使用系统的 ABC
+* 菜单切换；
+* 快捷键切换，默认 `Ctrl+space`；
+* `CapsLock` 切换，见下文。
+
+## 我想短按 CapsLock 切换中英文，长按 CapsLock 切换大小写
+
+### 如果小企鹅添加到了简体中文
+`打开键盘设置` -> `所有输入法`，开启 `使用大写锁定键切换 “ABC” 输入法`。
+
+### 如果小企鹅添加到了英语
+先要 `打开键盘设置` -> `所有输入法`，关闭 `使用大写锁定键切换 “ABC” 输入法`。
+
+然后使用 [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) 将短按 `CapsLock` 映射为其他组合键，并保留长按：
+* 在 `Complex Modifications` 中 `Add your own rule`，（以 `Ctrl+Alt+slash` 为例）填入
 ```json
 {
-    "description": "change CapsLock to Ctrl+Shift_R",
+    "description": "Short press CapsLock → Ctrl+Alt+slash, Long press → CapsLock",
     "manipulators": [{
-        "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-                "mandatory": [],
-                "optional": []
-            }
-        },
-        "to": [{
-            "key_code": "right_shift",
-            "modifiers": ["control"]
+        "from": { "key_code": "caps_lock" },
+        "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+        "to_if_alone": [{
+            "key_code": "slash",
+            "modifiers": ["control", "option"]
         }],
+        "to_if_held_down": [{ "key_code": "caps_lock" }],
         "type": "basic"
     }]
 }
 ```
-然后根据您的需求，
+最后根据您的需求，
 * 若要在小企鹅内部切换中英文，在 `全局配置` -> `快捷键` -> `切换启用/禁用输入法` 中录制 `CapsLock`（注意此时会显示上一步设置的快捷键，而非 `CapsLock`）；
 * 若要切换小企鹅和系统的 `ABC`，需要再借助 [Input Source Pro](https://github.com/runjuu/InputSourcePro)，在 `快捷键` 中将 `ABC` 和小企鹅加入同一个切换组，并录制 `CapsLock`。
 
@@ -34,10 +50,10 @@
 * 菜单切换；
 * 快捷键切换，默认按住 `Ctrl` 并连续按下 `Shift_L`。
 
-## 为什么小企鹅注册为英语输入法
+## 为什么小企鹅可以被注册为英语输入法
 * 小企鹅尽可能实现完整的输入功能，包括适配用户删掉了系统 `ABC` 的特殊情况。
 * 只有英语输入法才可以在密码输入框中使用。如果注册为其他语言的输入法，系统将在密码输入框自动切换为 `ABC`，但输入完毕后不会自动切换回来，给用户造成麻烦。
-* 小企鹅作为输入法框架，支持多种语言的输入法（包括 Hallelujah 英语智能输入），但没有必要对所有支持的语言注册一次。
+* 小企鹅作为输入法框架，支持多种语言的输入法（包括 Hallelujah 英语智能输入）。没有必要对所有支持的语言注册一次，但有必要提供一个中立语言供用户选择。
 
 ## 如何切换繁简
 
