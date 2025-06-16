@@ -111,18 +111,18 @@
 ## 预编辑结构
 ```html
 <div class="fcitx-preedit">
-  <div class="fcitx-pre-cursor">预bian</div>
-  <div class="fcitx-cursor fcitx-no-text"></div>
-  <div class="fcitx-post-cursor">ji</div>
+  <div class="fcitx-pre-caret">预bian</div>
+  <div class="fcitx-caret fcitx-no-text"></div>
+  <div class="fcitx-post-caret">ji</div>
 </div>
 ```
-`fcitx-pre-cursor` 是光标前的预编辑文字。
+`fcitx-pre-caret` 是光标前的预编辑文字。
 
-`fcitx-cursor` 是光标。
+`fcitx-caret` 是光标。
 
-`fcitx-no-text`* 表示非文字形式。当它与 `fcitx-cursor` 结合时，光标是一个（闪烁或静止的）竖条，否则光标是文字形式，如 `‸`。
+`fcitx-no-text`* 表示非文字形式。当它与 `fcitx-caret` 结合时，光标是一个（闪烁或静止的）竖条，否则光标是文字形式，如 `‸`。
 
-`fcitx-post-cursor` 是光标后的预编辑文字。
+`fcitx-post-caret` 是光标后的预编辑文字。
 
 ## 候选词结构
 ```html
