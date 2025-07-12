@@ -39,6 +39,13 @@ export default defineConfig({
           { text: '调整主题', link: '/docs/theme/adjust' },
           { text: '定制 CSS', link: '/docs/theme/css' },
         ]
+      },
+      {
+        text: '高级',
+        items: [
+          { text: '云拼音', link: '/docs/advanced/cloudpinyin'},
+          { text: '简繁转换', link: '/docs/advanced/chttrans' },
+        ]
       }
     ],
 
