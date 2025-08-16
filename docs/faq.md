@@ -93,6 +93,15 @@
 ### 中州韵
 请咨询方案作者。
 
+## 如何启用剪贴板
+`高级` -> `macOS Frontend` -> `监视剪贴板`。
+
+## 候选窗中有些字不显示
+系统字体不支持全字集。可以安装[遍黑体](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project/releases)：
+1. 解压 `Plangothic-OTF-*.7z`；
+2. 把 `PlangothicP1-Regular.otf` 和 `PlangothicP2-Regular.otf` 放入用户字体目录 `~/Library/Fonts`（此目录也可以在 `主题编辑器` -> `字体` 中打开）；
+3. 重启输入法。
+
 ## 如何切换主题
 1. 从[中央仓库](https://github.com/fcitx-contrib/fcitx5-theme-collection/tree/master/theme)或其他渠道获取主题文件；
 2. `主题编辑器` -> `基础` -> `选择/导入主题`。
