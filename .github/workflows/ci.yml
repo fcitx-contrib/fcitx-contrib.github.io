@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24.x
 
@@ -28,7 +28,7 @@ jobs:
 
       - name: Embed fcitx5-online
         run: |
-          wget https://github.com/fcitx-contrib/fcitx5-online/releases/download/latest/fcitx5-online.zip
+          wget https://github.com/fcitx/fcitx5-online/releases/download/latest/fcitx5-online.zip
           unzip fcitx5-online.zip
           mv fcitx5-online public/online
 
