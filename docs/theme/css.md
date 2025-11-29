@@ -25,13 +25,13 @@
       <div class="fcitx-panel-top"></div>
       <div class="fcitx-panel-topright"></div>
       <div class="fcitx-panel-left"></div>
-      <div class="fcitx-panel-center">
-        <div class="fcitx-panel"></div>
-      </div>
       <div class="fcitx-panel-right"></div>
       <div class="fcitx-panel-bottomleft"></div>
       <div class="fcitx-panel-bottom"></div>
       <div class="fcitx-panel-bottomright"></div>
+      <div class="fcitx-panel-center">
+        <div class="fcitx-panel"></div>
+      </div>
     </div>
     <div class="fcitx-contextmenu">
       <div class="fcitx-menu-item">置顶</div>
@@ -72,6 +72,7 @@
       <div class="fcitx-candidate fcitx-hoverable"></div>
       <div class="fcitx-divider"></div>
       <div class="fcitx-candidate fcitx-hoverable"></div>
+      <div class="fcitx-divider"></div>
       <div class="fcitx-divider fcitx-divider-paging"></div>
       <div class="fcitx-paging"></div>
     </div>
