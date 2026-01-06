@@ -47,6 +47,7 @@ export default defineConfig({
           { text: '剪贴板', link: '/docs/advanced/clipboard' },
           { text: '云拼音', link: '/docs/advanced/cloudpinyin'},
           { text: '简繁转换', link: '/docs/advanced/chttrans' },
+          { text: 'Unicode', link: '/docs/advanced/unicode' },
         ]
       },
       {
