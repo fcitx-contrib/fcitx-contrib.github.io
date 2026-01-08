@@ -48,6 +48,7 @@ export default defineConfig({
           { text: '云拼音', link: '/docs/advanced/cloudpinyin'},
           { text: '简繁转换', link: '/docs/advanced/chttrans' },
           { text: '全角字符', link: '/docs/advanced/fullwidth' },
+          { text: '标点', link: '/docs/advanced/punctuation' },
           { text: 'Unicode', link: '/docs/advanced/unicode' },
         ]
       },
