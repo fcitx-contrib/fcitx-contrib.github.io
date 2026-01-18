@@ -44,6 +44,7 @@ export default defineConfig({
         text: '高级',
         items: [
           { text: 'macOS 前端', link: '/docs/advanced/macosfrontend' },
+          { text: 'Web 服务器', link: '/docs/advanced/beast' },
           { text: '剪贴板', link: '/docs/advanced/clipboard' },
           { text: '云拼音', link: '/docs/advanced/cloudpinyin'},
           { text: '简繁转换', link: '/docs/advanced/chttrans' },
