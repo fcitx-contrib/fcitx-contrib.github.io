@@ -61,7 +61,7 @@
 
 ## 面板结构
 ```html
-<div class="fcitx-panel fcitx-horizontal-tb">
+<div class="fcitx-panel fcitx-horizontal-tb fcitx-has-tab-actions fcitx-mousemoved">
   <div class="fcitx-panel-blur fcitx-blur">
     <div class="fcitx-header">
       <div class="fcitx-aux-up fcitx-hidden">拼</div>
@@ -69,12 +69,24 @@
     </div>
     <div class="fcitx-aux-down fcitx-hidden"></div>
     <div class="fcitx-hoverables fcitx-horizontal fcitx-horizontal-scroll fcitx-mousemoved">
-      <div class="fcitx-candidate fcitx-hoverable"></div>
-      <div class="fcitx-divider"></div>
-      <div class="fcitx-candidate fcitx-hoverable"></div>
-      <div class="fcitx-divider"></div>
-      <div class="fcitx-divider fcitx-divider-paging"></div>
-      <div class="fcitx-paging"></div>
+      <div class="fcitx-scroll-area">
+        <div class="fcitx-candidate fcitx-hoverable"></div>
+        <div class="fcitx-divider"></div>
+        <div class="fcitx-candidate fcitx-hoverable"></div>
+        <div class="fcitx-divider"></div>
+      </div>
+      <div class="fcitx-tabs">
+        <div class="fcitx-tabs-scrollable">
+          <div class="fcitx-tab fcitx-highlighted">
+            <div class="fcitx-tab-inner">xian</div>
+          </div>
+        </div>
+        <div class="fcitx-tabs-pinned">
+          <div class="fcitx-tab">
+            <div class="fcitx-tab-inner">单字</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -95,19 +107,52 @@
 
 `fcitx-aux-down` 用于次要的提示信息，例如 `Ctrl+semicolon` 调出剪贴板时提示用户剪贴板为空。
 
-`fcitx-hoverables` 是候选词、分隔线和翻页按钮的容器。
+`fcitx-has-tab-actions`* 表示当前存在标签动作。标签动作仅在卷轴模式下显示。
+
+`fcitx-mousemoved`* 表示本次界面更新后用户移动了鼠标。它会同时添加到 `fcitx-panel` 和 `fcitx-hoverables`。鼠标未移动时不应算作悬浮于候选词或标签上，从而避免意外改变高亮样式。
+
+`fcitx-hoverables` 是候选区域的容器，包含可滚动的候选内容 `fcitx-scroll-area` 和标签动作区 `fcitx-tabs`。
+
+`fcitx-scroll-area` 是候选词、分隔线和翻页按钮的直接容器。普通模式下，候选内容仍按既有版式排列；卷轴模式下，只有这一层负责纵向滚动。
 
 `fcitx-horizontal`* 表示候选词和翻页按钮水平排列，相应地 `fcitx-vertical` 表示垂直排列。它们和 `fcitx-horizontal-tb` 等书写模式可以产生 6 种组合，在 `主题编辑器` -> `版式` 中设置。
 
 * `fcitx-horizontal-scroll`* 表示当前处于卷轴模式，仅在 `fcitx-horizontal-tb` 和 `fcitx-horizontal` 的组合下可能出现。
-
-* `fcitx-mousemoved`* 表示本次界面更新后用户移动了鼠标。它的意义是：鼠标未移动时不应算作悬浮于候选词上，从而改变高亮。
 
 `fcitx-hoverable` 表示其内部的 `fcitx-hoverable-inner` 元素可以在鼠标悬浮时产生高亮效果，用于候选词和翻页按钮。
 
 `fcitx-candidate` 是候选词的容器，它的结构在后文介绍。
 
 `fcitx-divider` 是分隔线的容器，它隔开各个 `fcitx-hoverable`。它的结构在后文介绍。
+
+## 标签动作结构
+标签动作位于候选词下方，仅在卷轴模式且输入法提供了标签动作时显示。
+
+```html
+<div class="fcitx-tabs">
+  <div class="fcitx-tabs-scrollable">
+    <div class="fcitx-tab fcitx-highlighted">
+      <div class="fcitx-tab-inner">xian</div>
+    </div>
+    <div class="fcitx-tab">
+      <div class="fcitx-tab-inner">xiang</div>
+    </div>
+  </div>
+  <div class="fcitx-tabs-pinned">
+    <div class="fcitx-tab">
+      <div class="fcitx-tab-inner">单字</div>
+    </div>
+  </div>
+</div>
+```
+
+`fcitx-tabs` 是整个标签动作区。它与候选内容同属 `fcitx-hoverables`，但位于 `fcitx-scroll-area` 之外，因此候选词滚动时标签动作仍固定在候选词下方。
+
+`fcitx-tabs-scrollable` 放置可横向滚动的标签动作。
+
+`fcitx-tabs-pinned` 放置固定在行末的标签动作。输入法提供的分隔标记只用于划分这两个区域，本身不会生成 DOM 元素。
+
+每个 `fcitx-tab` 代表一个可点击的标签动作，`fcitx-tab-inner` 是其显示文字和高亮背景所在的内层。`fcitx-highlighted`* 表示该标签动作处于选中状态。
 
 ## 预编辑结构
 ```html
@@ -128,6 +173,7 @@
 ## 候选词结构
 ```html
 <div class="fcitx-candidate fcitx-candidate-first fcitx-highlighted fcitx-highlighted-original fcitx-hoverable">
+  <div class="fcitx-candidate-background"></div>
   <div class="fcitx-candidate-inner fcitx-hoverable-inner">
     <div class="fcitx-mark fcitx-no-text"></div>
     <div class="fcitx-label">1</div>
@@ -141,6 +187,8 @@
 `fcitx-highlighted`* 表示高亮状态。
 
 `fcitx-highlighted-original`* 表示当前页初始高亮状态，因为鼠标悬浮在其他候选词时高亮可以移动（取决于设置的高亮行为），而鼠标离开面板时高亮应恢复初始位置。
+
+`fcitx-candidate-background` 是用于修复 ghost stripe 的辅助背景层。当候选词紧贴面板边缘（外边距为 0），且面板圆角半径大于等于候选词内层的圆角半径时，浏览器的圆角抗锯齿可能产生一条颜色异常的弧线。脚本会按照面板圆角裁剪首尾候选词的这一背景层，以遮住该弧线。进入卷轴模式时，脚本会跳过上述 `clip-path` 修复并移除此前注入的规则，因为卷轴中候选词的位置不固定。
 
 `fcitx-candidate-inner` 是候选词内层。区分内外的主要原因是高亮和面板边缘之间可以有空隙（外边距）。
 
